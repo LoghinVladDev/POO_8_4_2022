@@ -11,3 +11,14 @@ add_executable(
         rezolvari/basic/P1/withoutComments/Student.h
         rezolvari/basic/P1/withoutComments/Student.cpp
 )
+
+add_executable(
+        advanced_P1
+        rezolvari/advanced/P1/withoutComments/main.cpp
+        rezolvari/advanced/P1/withoutComments/Catalog.cpp
+        rezolvari/advanced/P1/withoutComments/Catalog.h
+        rezolvari/advanced/P1/withoutComments/Student.h
+        rezolvari/advanced/P1/withoutComments/Student.cpp
+        rezolvari/advanced/P1/withoutComments/StringFunctions.h
+        rezolvari/advanced/P1/withoutComments/StringFunctions.cpp
+)
