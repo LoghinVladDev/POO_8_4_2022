@@ -33,3 +33,11 @@ add_executable(
         rezolvari/expert/P1/withoutComments/String.cpp
         rezolvari/expert/P1/withoutComments/String.h
 )
+
+add_executable(
+        basic_Probelma_1
+        rezolvari/basic/Problema_1/main.cpp
+        rezolvari/basic/Problema_1/Punct.h
+        rezolvari/basic/Problema_1/Rectangle.cpp
+        rezolvari/basic/Problema_1/Rectangle.h
+)
