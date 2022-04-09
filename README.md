@@ -8,7 +8,7 @@ Status
   
 * P1_B_N = done
 * P1_B_Y = done
-* P1_A_N = not done
+* P1_A_N = done
 * P1_A_Y = not done
 * P1_E_N = not done
 * P1_E_Y = not done
