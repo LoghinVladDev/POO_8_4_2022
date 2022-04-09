@@ -50,3 +50,10 @@ add_executable(
         rezolvari/advanced/Problema_1/Rectangle.cpp
         rezolvari/advanced/Problema_1/Rectangle.h
 )
+
+add_executable(
+        basic_Probelma_4
+        rezolvari/basic/Problema_4/main.cpp
+        rezolvari/basic/Problema_4/Propozitie.cpp
+        rezolvari/basic/Problema_4/Propozitie.h
+)
