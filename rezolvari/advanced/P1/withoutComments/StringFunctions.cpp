@@ -30,12 +30,14 @@ bool stringEquals ( char const * pLeft, char const * pRight ) {
     return true;
 }
 
-void stringCopy ( char * pDest, char const * pRight ) {
+void stringCopy ( char * pDest, char const * pSource ) {
 
-    while ( * pRight != '\0' ) {
-        * pDest = * pRight;
+    while ( * pSource != '\0' ) {
+        * pDest = * pSource;
 
         ++ pDest;
-        ++ pRight;
+        ++ pSource;
     }
+
+    * pDest = * pSource;
 }

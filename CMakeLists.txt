@@ -22,3 +22,14 @@ add_executable(
         rezolvari/advanced/P1/withoutComments/StringFunctions.h
         rezolvari/advanced/P1/withoutComments/StringFunctions.cpp
 )
+
+add_executable(
+        expert_P1
+        rezolvari/expert/P1/withoutComments/main.cpp
+        rezolvari/expert/P1/withoutComments/Catalog.cpp
+        rezolvari/expert/P1/withoutComments/Catalog.h
+        rezolvari/expert/P1/withoutComments/Student.h
+        rezolvari/expert/P1/withoutComments/Student.cpp
+        rezolvari/expert/P1/withoutComments/String.cpp
+        rezolvari/expert/P1/withoutComments/String.h
+)
