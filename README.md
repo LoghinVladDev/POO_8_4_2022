@@ -1,7 +1,7 @@
 # POO_8_4_2022
-
+<pre>
 Status 
-* <Problema>_<Mod>_<Comentarii> 
+* [Problema]_[Mod]_[Comentarii] 
    * Problema = P1, Problema_1, Problema_2, ...
    * Mod = B = basic, A = advanced, E = expert
    * Comentarii = Y = cu comentarii, N = fara comentarii
@@ -48,3 +48,4 @@ Status
 * Problema_5_E_N = not done
 * Problema_5_E_Y = not done
   
+</pre>
