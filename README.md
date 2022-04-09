@@ -15,7 +15,7 @@ Status
   
 * Problema_1_B_N = done
 * Problema_1_B_Y = not done
-* Problema_1_A_N = not done
+* Problema_1_A_N = done
 * Problema_1_A_Y = not done
 * Problema_1_E_N = not done
 * Problema_1_E_Y = not done

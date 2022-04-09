@@ -41,3 +41,12 @@ add_executable(
         rezolvari/basic/Problema_1/Rectangle.cpp
         rezolvari/basic/Problema_1/Rectangle.h
 )
+
+add_executable(
+        advanced_Probelma_1
+        rezolvari/advanced/Problema_1/main.cpp
+        rezolvari/advanced/Problema_1/Punct.h
+        rezolvari/advanced/Problema_1/Punct.cpp
+        rezolvari/advanced/Problema_1/Rectangle.cpp
+        rezolvari/advanced/Problema_1/Rectangle.h
+)
