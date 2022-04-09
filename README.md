@@ -34,14 +34,14 @@ Status
 * Problema_3_E_N = not done
 * Problema_3_E_Y = not done
   
-* Problema_4_B_N = not done
+* Problema_4_B_N = done
 * Problema_4_B_Y = not done
 * Problema_4_A_N = not done
 * Problema_4_A_Y = not done
 * Problema_4_E_N = not done
 * Problema_4_E_Y = not done
   
-* Problema_5_B_N = not done
+* Problema_5_B_N = done
 * Problema_5_B_Y = not done
 * Problema_5_A_N = not done
 * Problema_5_A_Y = not done

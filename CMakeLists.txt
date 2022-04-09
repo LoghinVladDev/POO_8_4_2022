@@ -36,24 +36,30 @@ add_executable(
 
 add_executable(
         basic_Probelma_1
-        rezolvari/basic/Problema_1/main.cpp
-        rezolvari/basic/Problema_1/Punct.h
-        rezolvari/basic/Problema_1/Rectangle.cpp
-        rezolvari/basic/Problema_1/Rectangle.h
+        rezolvari/basic/Problema_1/withoutComments/main.cpp
+        rezolvari/basic/Problema_1/withoutComments/Punct.h
+        rezolvari/basic/Problema_1/withoutComments/Rectangle.cpp
+        rezolvari/basic/Problema_1/withoutComments/Rectangle.h
 )
 
 add_executable(
         advanced_Probelma_1
-        rezolvari/advanced/Problema_1/main.cpp
-        rezolvari/advanced/Problema_1/Punct.h
-        rezolvari/advanced/Problema_1/Punct.cpp
-        rezolvari/advanced/Problema_1/Rectangle.cpp
-        rezolvari/advanced/Problema_1/Rectangle.h
+        rezolvari/advanced/Problema_1/withoutComments/main.cpp
+        rezolvari/advanced/Problema_1/withoutComments/Punct.h
+        rezolvari/advanced/Problema_1/withoutComments/Punct.cpp
+        rezolvari/advanced/Problema_1/withoutComments/Rectangle.cpp
+        rezolvari/advanced/Problema_1/withoutComments/Rectangle.h
 )
 
 add_executable(
         basic_Probelma_4
-        rezolvari/basic/Problema_4/main.cpp
-        rezolvari/basic/Problema_4/Propozitie.cpp
-        rezolvari/basic/Problema_4/Propozitie.h
+        rezolvari/basic/Problema_4/withoutComments/main.cpp
+        rezolvari/basic/Problema_4/withoutComments/Propozitie.cpp
+        rezolvari/basic/Problema_4/withoutComments/Propozitie.h
+)
+
+add_executable(
+        basic_Probelma_5
+        rezolvari/basic/Problema_5/withoutComments/main.cpp
+        rezolvari/basic/Problema_5/withoutComments/SimpleList.h
 )
