@@ -8,6 +8,7 @@
 int main () {
 
     Catalog c = "math";
+
     ( (c += { "Popescu", 10 }) += { "Ionescu", 9 } ) += { "Popescu", 8 };
 
     printf (

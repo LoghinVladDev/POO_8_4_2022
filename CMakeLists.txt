@@ -63,3 +63,8 @@ add_executable(
         rezolvari/basic/Problema_5/withoutComments/main.cpp
         rezolvari/basic/Problema_5/withoutComments/SimpleList.h
 )
+
+add_executable(
+        10_4
+        10_4/main.cpp
+)
