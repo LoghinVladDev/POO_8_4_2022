@@ -4,12 +4,12 @@
 
 #include <iostream>
 #include "Student.h"
+#include "Catalog.h"
 
 int main () {
     Catalog c; /// se creeaza un obiect c Catalog
     c+= {"Andrei"}; /// introducem un student cu numele Andrei -> Student ....
-    c+= {"Roxana"};
-    c+= {"Sorin"};
+    (c+= {"Roxana"}) += {"Sorin"};
     c["Andrei"]["matematica"] = 8; /// atribuim nota la materie
     //// c.getStudent("Andrei").getGrade("matematica") = 8;
     //// catalogul are indexare ce obtine un student                -> c["Andrei"] -> Student &
@@ -36,5 +36,5 @@ int main () {
         c[index].PrintNote();
     }
 
-    return 1;
+    return 0;
 }
