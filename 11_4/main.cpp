@@ -5,9 +5,9 @@
 #include <iostream>
 #include "Student.h"
 #include "Catalog.h"
+Catalog c; /// se creeaza un obiect c Catalog
 
 int main () {
-    Catalog c; /// se creeaza un obiect c Catalog
     c+= {"Andrei"}; /// introducem un student cu numele Andrei -> Student ....
     (c+= {"Roxana"}) += {"Sorin"};
     c["Andrei"]["matematica"] = 8; /// atribuim nota la materie
@@ -21,8 +21,6 @@ int main () {
     c["Roxana"]["romana"] = 10;
     c["Sorin"]["sport"] = 5;
     c["Sorin"]["romana"] = 9;
-
-    std :: cout << c["Sorin"]["romana"] << "\n";
 
     std :: cout << "Total studenti: " << c.GetCount () << std::endl;
     for ( int index = 0; index < c.GetCount (); ++ index ) {

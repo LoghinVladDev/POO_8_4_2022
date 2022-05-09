@@ -73,3 +73,9 @@ add_executable(
         11_4
         11_4/main.cpp 11_4/Catalog.cpp 11_4/Catalog.h 11_4/Student.cpp 11_4/Student.h
 )
+
+add_executable (
+        9_5
+        9_5/main.cpp
+        9_5/Phrase.cpp
+)
