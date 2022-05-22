@@ -7,34 +7,34 @@
 
 using namespace std;
 
-//class DivideByZeroException : public std :: exception {
-//public:
-//    char const * what() const noexcept {
-//        return "Cannot divide by zero!";
-//    }
-//};
-//
-//class CustomException : public std :: exception {
-//public:
-//    char const * what() const noexcept override {
-//        return "1";
-//    }
-//};
-//
-//void checkIfDivideByZero ( int b ) {
-//    if ( b == 0 ) {
-//        throw DivideByZeroException();
-//    }
-//
-//    if ( b == 5 ) {
-//        throw CustomException();
-//    }
-//}
-//
-//int impartire ( int a, int b ) {
-//    checkIfDivideByZero(b);
-//    return a / b;
-//}
+class DivideByZeroException : public std :: exception {
+public:
+    char const * what() const noexcept {
+        return "Cannot divide by zero!";
+    }
+};
+
+class CustomException : public std :: exception {
+public:
+    char const * what() const noexcept override {
+        return "1";
+    }
+};
+
+void checkIfDivideByZero ( int b ) {
+    if ( b == 0 ) {
+        throw DivideByZeroException();
+    }
+
+    if ( b == 5 ) {
+        throw CustomException();
+    }
+}
+
+int impartire ( int a, int b ) {
+    checkIfDivideByZero(b);
+    return a / b;
+}
 
 int main () {
 //
@@ -91,8 +91,63 @@ int main () {
         std :: cout << e.what() << '\n';
     }
 
-
     /// ~Array () <- el este declarat in clasa
     /// va fi apelat aici!!!!
+
+
+    /// addendum la sort-ul de la 89
+
+//    int (* pfn) (int, int) = & impartire; varianta handicapati a.k.a cum se facea in C
+// c++
+//    using ImpartireType = int (*) (int, int);
+//    ImpartireType pfn = & impartire;
+
+//    int x = pfn (3, 2);
+
+////  if ( compare ( * this->array[i], * this->array[j] ) > 0 ) ...
+
+    auto compareFunction = [](int const & a, int const & b) {
+        if ( a > b ) { return 1; }
+        else if ( a < b ) { return -1; }
+        return 0;
+    };
+
+    vector.sort ( compareFunction );
+
+    class IntComparator : public Compare {
+        int CompareElements ( void * e1, void * e2 ) override {
+            int * pE1 = (int *) e1;
+            int * pE2 = (int *) e2;
+
+            if ( * pE1 > * pE2 ) { return 1; }
+            else if ( * pE1 < * pE2 ) { return -1; }
+            return 0;
+        }
+    };
+
+    auto digitCompareFunction = [](int const & a, int const & b) {
+        auto digitSum = [] ( int a ) {
+            int sum = 0;
+            while ( a > 0 ) {
+                sum += a %10;
+                a/=10;
+            }
+
+            return sum;
+        };
+
+        int sumA = digitSum(a);
+        int sumB = digitSum(b);
+
+        if ( sumA > sumB ) { return 1; }
+        else if ( sumA < sumB ) { return -1; }
+        return 0;
+    };
+
+    IntComparator comparator;
+    vector.sort ( & comparator );
+
+    vector.sort ( digitCompareFunction );
+
     return 0;
 }
