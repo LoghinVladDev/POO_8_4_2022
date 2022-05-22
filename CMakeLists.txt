@@ -79,3 +79,8 @@ add_executable (
         9_5/main.cpp
         9_5/Phrase.cpp
 )
+
+add_executable (
+        22_5
+        22_5/main.cpp
+)
