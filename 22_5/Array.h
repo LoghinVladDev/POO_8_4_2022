@@ -87,7 +87,10 @@ public:
     void sort(); // sorteaza folosind comparatia intre elementele din T
 
     /// compare is a (pointer to) function of type    int ( T const &, T const & )
-    void sort(int(*compare)(const T&, const T&)); // sorteaza folosind o functie de comparatie
+    template < typename CompareFunction >
+    void sort ( CompareFunction function );
+
+//    void sort( int ( * compare ) ( T const &, T const & ) ); // sorteaza folosind o functie de comparatie
     void sort(Compare *comparator); // sorteaza folosind un obiect de comparatie
 
 
@@ -102,7 +105,7 @@ public:
     int find(const T& elem); // cauta un element in Array
 
     /// cauta cu compare ( * this->array[i], elem ) == 0
-    int find(const T& elem, int(*compare)(const T&, const T&));//  cauta un element folosind o functie de comparatie
+    int find(T const & elem, int(*compare)( T const&, T const&));//  cauta un element folosind o functie de comparatie
 
     /// cauta cu comparator->CompareElements ( this->array[i], & elem ) == 0
     int find(const T& elem, Compare *comparator);//  cauta un element folosind un comparator
@@ -250,6 +253,49 @@ Array < T > &   Array < T > :: operator = ( Array < T > const & otherArray ) noe
     this->capacity  = otherArray.capacity;
 
     return * this;
+}
+
+//template < typename T >
+//void Array < T > :: sort (
+//        int ( * compare ) ( T const &, T const & )
+//) {
+
+template < typename T >
+template < typename CompareFunction >
+void Array < T > :: sort ( CompareFunction compare ) {
+
+    for ( int i = 0; i < this->size - 1; ++ i ) {
+        for ( int j = i + 1; j < this->size; ++ j ) {
+//            if ( v[i] > v[j] )
+            if ( compare ( * this->array [i], * this->array[j] ) > 0 ) {
+                T * aux = this->array[i];
+                this->array[i] = this->array[j];
+                this->array[j] = aux;
+            }
+        }
+    }
+}
+
+class ElementNotFound : public std :: exception {
+public:
+    const char * what() const noexcept override {
+        return "Element Not Found";
+    }
+};
+
+template < typename T >
+int Array < T > :: find (
+        T const & element,
+        int ( * compare ) ( T const &, T const & )
+) {
+
+    for ( int i = 0; i < this->size; ++ i ) {
+        if ( compare ( * this->array[i], element ) == 0 ) {
+            return i;
+        }
+    }
+
+    throw ElementNotFound();
 }
 
 #endif //POO_8_4_2022_ARRAY_H

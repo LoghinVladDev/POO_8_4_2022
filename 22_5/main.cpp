@@ -36,6 +36,18 @@ int impartire ( int a, int b ) {
     return a / b;
 }
 
+int compareByGreater (int const &a, int const& b) {
+    if ( a < b ) {
+        return 1;
+    }
+
+    if ( a == b ) {
+        return 0;
+    }
+
+    return -1;
+}
+
 int main () {
 //
 //    try {
@@ -74,80 +86,118 @@ int main () {
     vector += 8;
     vector += 9;
 
-    /// 3, 4 ,5 ,8, 9
+    vector.sort(compareByGreater);
 
-    /// operator []
-    std :: cout << vector [3] << '\n'; /// 8
+    auto indexOf5 = vector.find(5, compareByGreater);
+    std :: cout << "Index of 5 : " << indexOf5 << '\n';
 
     try {
-        vector[-1];
-    } catch ( std ::exception & e ) {
+        vector.find(7, compareByGreater);
+    } catch ( std :: exception & e ) {
         std :: cout << e.what() << '\n';
     }
 
-    try {
-        vector[5];
-    } catch ( std ::exception & e ) {
-        std :: cout << e.what() << '\n';
-    }
+    class {
+    public:
+        int operator () (int a, int b){
 
-    /// ~Array () <- el este declarat in clasa
-    /// va fi apelat aici!!!!
-
-
-    /// addendum la sort-ul de la 89
-
-//    int (* pfn) (int, int) = & impartire; varianta handicapati a.k.a cum se facea in C
-// c++
-//    using ImpartireType = int (*) (int, int);
-//    ImpartireType pfn = & impartire;
-
-//    int x = pfn (3, 2);
-
-////  if ( compare ( * this->array[i], * this->array[j] ) > 0 ) ...
-
-    auto compareFunction = [](int const & a, int const & b) {
-        if ( a > b ) { return 1; }
-        else if ( a < b ) { return -1; }
-        return 0;
-    };
-
-    vector.sort ( compareFunction );
-
-    class IntComparator : public Compare {
-        int CompareElements ( void * e1, void * e2 ) override {
-            int * pE1 = (int *) e1;
-            int * pE2 = (int *) e2;
-
-            if ( * pE1 > * pE2 ) { return 1; }
-            else if ( * pE1 < * pE2 ) { return -1; }
-            return 0;
-        }
-    };
-
-    auto digitCompareFunction = [](int const & a, int const & b) {
-        auto digitSum = [] ( int a ) {
-            int sum = 0;
-            while ( a > 0 ) {
-                sum += a %10;
-                a/=10;
+            if ( a < b ) {
+                return 1;
             }
 
-            return sum;
-        };
+            return -1;
+        }
+    } sorter;
 
-        int sumA = digitSum(a);
-        int sumB = digitSum(b);
+    vector.sort([](int a, int b){
 
-        if ( sumA > sumB ) { return 1; }
-        else if ( sumA < sumB ) { return -1; }
-        return 0;
-    };
+        if ( a > b ) {
+            return 1;
+        }
 
-    IntComparator comparator;
-    vector.sort ( & comparator );
+        return -1;
+    });
 
-    vector.sort ( digitCompareFunction );
+    vector.sort(sorter);
+
+    for ( int i = 0; i < vector.getSize(); ++ i ) {
+        std :: cout << vector[i] << '\n';
+    }
+//
+//    /// 3, 4 ,5 ,8, 9
+//
+//    /// operator []
+//    std :: cout << vector [3] << '\n'; /// 8
+//
+//    try {
+//        vector[-1];
+//    } catch ( std ::exception & e ) {
+//        std :: cout << e.what() << '\n';
+//    }
+//
+//    try {
+//        vector[5];
+//    } catch ( std ::exception & e ) {
+//        std :: cout << e.what() << '\n';
+//    }
+//
+//    /// ~Array () <- el este declarat in clasa
+//    /// va fi apelat aici!!!!
+//
+//
+//    /// addendum la sort-ul de la 89
+//
+////    int (* pfn) (int, int) = & impartire; varianta handicapati a.k.a cum se facea in C
+//// c++
+////    using ImpartireType = int (*) (int, int);
+////    ImpartireType pfn = & impartire;
+//
+////    int x = pfn (3, 2);
+//
+//////  if ( compare ( * this->array[i], * this->array[j] ) > 0 ) ...
+//
+//    auto compareFunction = [](int const & a, int const & b) {
+//        if ( a > b ) { return 1; }
+//        else if ( a < b ) { return -1; }
+//        return 0;
+//    };
+//
+//    vector.sort ( compareFunction );
+//
+//    class IntComparator : public Compare {
+//        int CompareElements ( void * e1, void * e2 ) override {
+//            int * pE1 = (int *) e1;
+//            int * pE2 = (int *) e2;
+//
+//            if ( * pE1 > * pE2 ) { return 1; }
+//            else if ( * pE1 < * pE2 ) { return -1; }
+//            return 0;
+//        }
+//    };
+//
+//    auto digitCompareFunction = [](int const & a, int const & b) {
+//        auto digitSum = [] ( int a ) {
+//            int sum = 0;
+//            while ( a > 0 ) {
+//                sum += a %10;
+//                a/=10;
+//            }
+//
+//            return sum;
+//        };
+//
+//        int sumA = digitSum(a);
+//        int sumB = digitSum(b);
+//
+//        if ( sumA > sumB ) { return 1; }
+//        else if ( sumA < sumB ) { return -1; }
+//        return 0;
+//    };
+//
+//    IntComparator comparator;
+//    vector.sort ( & comparator );
+//
+//    vector.sort ( digitCompareFunction );
 
     return 0;
 }

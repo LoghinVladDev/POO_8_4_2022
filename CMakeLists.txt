@@ -84,3 +84,8 @@ add_executable (
         22_5
         22_5/main.cpp
 )
+
+add_executable(
+        27_5
+        27_5/main.cpp
+)
