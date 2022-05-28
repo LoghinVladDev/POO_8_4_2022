@@ -89,3 +89,16 @@ add_executable(
         27_5
         27_5/main.cpp
 )
+
+add_executable(
+        28_5
+        28_5/main.cpp
+        28_5/Biblioteca.cpp
+        28_5/Biblioteca.h
+        28_5/Carte.cpp
+        28_5/Carte.h
+        28_5/Revista.cpp
+        28_5/Revista.h
+        28_5/Roman.cpp
+        28_5/Roman.h
+)
